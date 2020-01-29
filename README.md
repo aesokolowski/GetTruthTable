@@ -13,6 +13,6 @@ to run, for example:
 
 java GetTruthTable 'x^y^z^+x^y^z'
 
-to get a truth table for F = SIGMA[m](0, 1)
+to get a truth table for F = SIGMA[m](0, 1) out of 8 states
 
 carat is used instead of the prime symbol (apostrophe) because I don't want users to have to worry about escaping the single-quote character. I specifically didn't want to use asterisk to avoid confusion with boolean AND nor ~ because it's associated with prefix notation and I prefer postfix.
