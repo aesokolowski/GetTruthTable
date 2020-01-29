@@ -13,4 +13,4 @@ javac GetTruthTable.java
 
 to run, for example:
 
-java GetTruthTable 'x*y*z*+x*y*z'
+java GetTruthTable 'x\*y\*z\*+x\*y\*z'
