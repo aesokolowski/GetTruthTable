@@ -1,3 +1,5 @@
+//  TODO: change binary term to binary product in variable name
+
 //  Andy Sokolowski    --     okay, let's see if I can generate a truth table
 //  from a given string
 
@@ -20,6 +22,7 @@ class GetTruthTable {
       } else {
         List<Character> terms = new ArrayList<Character>();
         List<String> products = new ArrayList<String>();
+        List<String> binaryProducts = new ArrayList<String>();
 
         int numTerms, numProducts;
 
@@ -48,7 +51,10 @@ class GetTruthTable {
         }
 
         // TODO: Verify that form is canonical
-        // TODO: Verify God knows what else 
+        // TODO: Verify God knows what else
+
+        // convert terms to binary form:
+        binaryProducts = convert(products, numTerms);
       }
     //  warn user if too many arguments
     } else if (args.length > 1) {
@@ -107,4 +113,25 @@ class GetTruthTable {
     return products;
   }
 */
+
+  private static List<String> convert(List<String> decProducts, int numTerms) {
+    List<String> binaryProducts = new ArrayList<String>();
+
+    for (String product : decProducts) {
+      int index = 0;
+      int maxLength = numTerms * 2;
+
+      while (index < maxLength) {
+        // debug -- need to figure out how to traverse this string
+        if (index >= product.length()) {
+          break;
+        }
+
+        System.out.println(product.charAt(index));
+        index++;
+      }
+    }
+
+    return binaryProducts;
+  }
 }
