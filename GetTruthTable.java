@@ -55,6 +55,12 @@ class GetTruthTable {
 
         // convert terms to binary form:
         binaryProducts = convert(products, numTerms);
+
+        //  debug: show binaryProducts:
+        System.out.println();
+        for (String bp : binaryProducts) {
+          System.out.println(bp);
+        }
       }
     //  warn user if too many arguments
     } else if (args.length > 1) {
@@ -120,16 +126,24 @@ class GetTruthTable {
     for (String product : decProducts) {
       int index = 0;
       int maxLength = numTerms * 2;
+      String currentProduct = "";
 
       while (index < maxLength) {
-        // debug -- need to figure out how to traverse this string
         if (index >= product.length()) {
           break;
         }
 
-        System.out.println(product.charAt(index));
-        index++;
+        // TODO: make this work for when last term is True
+        if (product.charAt(index + 1) == '^') {
+          currentProduct += "0";
+          index += 2;
+        } else {
+          currentProduct += "1";
+          index++;
+        }
       }
+
+      binaryProducts.add(currentProduct);
     }
 
     return binaryProducts;
